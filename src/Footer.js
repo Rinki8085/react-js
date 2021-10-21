@@ -1,14 +1,11 @@
 import React from 'react';
 
-const Header = () => {
+const Footer =() => {
     return(
         <div>
             <center>
-                <h2>Header</h2>
+                <h2>&copy;developer</h2>
             </center>
-            <hr/>
         </div>
     )
 }
-
-export default Header;
