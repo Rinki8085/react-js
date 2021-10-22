@@ -20,8 +20,7 @@ const Search = () => {
                 Find The Best Restaurent, Cafes and Bars
             </div>
 
-            <div class="container d-flex justify-content-center">
-                
+            <div class="container d-flex justify-content-center">    
                 <form>
                     <select style={{width:'40%'}} name="Location" id="city" class="custom-select" onchange="recommend()">
                     <option selected> Select Location </option>
@@ -39,7 +38,6 @@ const Search = () => {
                     <option value="Awantika">Awantika</option>
                     </select>
                 </form>
-
             </div>
 
         </div>
