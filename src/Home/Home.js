@@ -5,8 +5,8 @@ import QuickSearch from './QuickSearch';
 const App = () => {
     return(
         <div id='container-fluid'>
-            <Search></Search>
-            <QuickSearch></QuickSearch>
+            <Search/>
+            <QuickSearch/>
         </div>
     )
 }
