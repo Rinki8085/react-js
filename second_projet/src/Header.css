@@ -1,0 +1,171 @@
+body{
+    font-family: 'Lato', sans-serif;
+    background:url('maldives.png') no-repeat center cover/center;
+    background-color: azure;
+}
+
+.cover{
+    position:relative;
+    z-index:0;
+    width:100%;
+    background-color:slategray;
+}
+
+.phone{
+    z-index:1;
+    font-weight:200;
+}
+
+.phone i{
+    color:white;
+}
+
+.phone a{
+    color:white;
+    font-size:13px;
+    font-weight: bold;
+}
+
+.reg{
+    width:50%;
+    text-align:right;
+}
+.reg a{
+    color:white;
+    text-transform: uppercase;
+    font-size:13px;
+    font-weight: bold;
+}
+
+.social-icon{
+    display:inline-block;
+    width:50%;
+}
+
+.social-icon p{
+    display:block;
+    width:100%;
+}
+
+.social-icon p:hover i{
+    color:#fe9801;
+}
+
+.social-icon p a{
+    height: 30px;
+    margin-right: 10px;
+}
+
+.social-icon p a i{
+    font-size:14px;
+    color:white;
+}
+
+
+/*=========Navbar=========*/
+.bg-color{
+    background-color:cornsilk;
+}
+
+.navbar-brand{
+    color:black;
+    font-weight:bold;
+    font-size: 37 px!important;
+}
+
+.nav-link{
+    font-weight:bold;
+    color:black;
+    font-size:20px;
+}
+
+.btn-group{
+    color:black;
+}
+
+.nabar-toggler i{
+    color:black;
+}
+
+#hero{
+    display:table;
+    width:100%;
+    height:60vh;
+    
+    background-size:cover;
+}
+
+@media(min-width:104px){
+    #hero{
+        background-attachment: fixed;
+    }
+}
+
+#hero .hero-logo{
+    margin:20px;
+    max-width: 100%;
+}
+
+#hero .hero-container{
+    background-color: black;
+    display:table-cell;                
+    margin:0;
+    padding:0;
+    text-align:center;
+    vertical-align:middle;
+}
+
+#hero h1{
+    color:white;
+    margin:30px 0 10px 0;
+    font-weight: bold;
+    line-height: 48px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px){
+    #hero h1{
+        font-size:28px;
+        line-height: 36px;
+    }
+}
+
+#hero h2{
+    color:white;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+@media (max-width: 768px){
+    #hero h2{
+        font: size 24px;
+        line-height: 26px;
+        margin-bottom:30px;
+    }
+}
+
+#hero .actions a{
+    text-transform: uppercase;
+    font-weight:bold;
+    font-size: 16px;
+    letter-spacing:1px;
+    display: inline-block;
+    padding:8px 20px;
+    border-radius: 2px;
+    transition:0.5s;
+    margin:10px;
+}
+
+#hero .btn-get-started {
+    background-color:bisque;
+    border:2px solid black;
+    color:black;
+}
+
+#hero .btn-get-started:hover{
+    background:none;
+    border: 2px solid black;
+    color:black;
+    text-decoration:none;
+    font-style: italic;
+}
