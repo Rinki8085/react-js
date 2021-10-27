@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainContainer.css'
+import './mainContainer.css'
 
 const MainContainer = () => {
     return(
@@ -13,7 +13,7 @@ const MainContainer = () => {
                         <div className="col-md-6 d-flex align-items-stretch">
                             <div className="card">
                                 <div className="card-img">
-                                    <img src="offer1.png" alt="offers"/>
+                                    <img src="https://i.ibb.co/5G2Bzvp/offer1.webp" alt="offers"/>
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title">
@@ -35,7 +35,7 @@ const MainContainer = () => {
                         <div className="col-md-6 d-flex align-items-stretch">
                             <div className="card">
                                 <div className="card-img">
-                                    <img src="offers2.png" alt="offers"/>
+                                    <img src="https://i.ibb.co/y8DJCKL/offers2.webp" alt="offers"/>
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title">
@@ -57,7 +57,7 @@ const MainContainer = () => {
                         <div className="col-md-6 d-flex align-items-stretch">
                             <div className="card">
                                 <div className="card-img">
-                                    <img src="offers3.png" alt="offers"/>
+                                    <img src="https://i.ibb.co/18CJZsC/offers3.webp" alt="offers"/>
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title">
@@ -79,7 +79,7 @@ const MainContainer = () => {
                         <div className="col-md-6 d-flex align-items-stretch">
                             <div className="card">
                                 <div className="card-img">
-                                    <img src="offer1.png" alt="offers"/>
+                                    <img src="https://i.ibb.co/18CJZsC/offers3.webp" alt="offers"/>
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title">
@@ -121,7 +121,7 @@ const MainContainer = () => {
 
                                 <div className="text text-center">
                                     <span className="out">10% Discount</span>
-                                    <h2>Place</h2>
+                                    <h2>Beach Places</h2>
                                 </div>
                             </div>    
                         </div>
@@ -134,7 +134,7 @@ const MainContainer = () => {
 
                                 <div className="text text-center">
                                     <span className="day">9% Discount</span>
-                                    <h2>Place</h2>
+                                    <h2>Trekking Places</h2>
                                 </div>
                             </div>    
                         </div>
@@ -147,7 +147,7 @@ const MainContainer = () => {
 
                                 <div className="text text-center">
                                     <span className="week">12% Discount</span>
-                                    <h2>Place</h2>
+                                    <h2>Peaceful place</h2>
                                 </div>
                             </div>    
                         </div>
@@ -159,7 +159,7 @@ const MainContainer = () => {
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>Place</h2>
+                                    <h2>International Place</h2>
                                 </div>
                             </div>    
                         </div>
@@ -171,7 +171,7 @@ const MainContainer = () => {
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>Place</h2>
+                                    <h2>Religious Place</h2>
                                 </div>
                             </div>    
                         </div>
@@ -183,7 +183,7 @@ const MainContainer = () => {
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>Place</h2>
+                                    <h2>Romantic Place</h2>
                                 </div>
                             </div>    
                         </div>
@@ -207,7 +207,7 @@ const MainContainer = () => {
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>Place</h2>
+                                    <h2>Weekend Gateway</h2>
                                 </div>
                             </div>    
                         </div>
@@ -232,7 +232,7 @@ const MainContainer = () => {
                     <div className="row">
                         <div className="col-md-4 col-lg-4 col-sm-6 b-3">
                             <div className="media border p-3 person">
-                                <img src="testimonial1.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                <img src="https://i.ibb.co/4SDV9CQ/testimonial1.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
                                 style={{width:'60px'}}/>
                                 <div className="media-body">
                                     <h4>John Doe</h4>
@@ -245,7 +245,7 @@ const MainContainer = () => {
 
                         <div className="col-md-4 col-lg-4 col-sm-6 mb-3">
                             <div className="media border p-3 person">
-                                <img src="testimonial2.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                <img src="https://i.ibb.co/gT6ddJb/testimonial2.jpg" alt="John Doe" className="mr-3 mt-3 rounded-circle"
                                 style={{width:'60px'}}/>
                                 <div className="media-body">
                                     <h4>John Doe</h4>
@@ -258,7 +258,7 @@ const MainContainer = () => {
 
                         <div className="col-md-4 col-lg-4 col-sm-6 b-3">
                             <div className="media border p-3 person">
-                                <img src="testimonial3.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                <img src="https://i.ibb.co/xSnCwKz/testimonial3.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
                                 style={{width:'60px'}}/>
                                 <div className="media-body">
                                     <h4>John Doe</h4>
@@ -275,4 +275,4 @@ const MainContainer = () => {
     )
 }
 
-export default main_container;
+export default MainContainer;

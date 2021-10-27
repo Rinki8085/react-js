@@ -3,6 +3,7 @@ import './Header.css'
 
 const Header = () => {
     return(
+        <>
         <section>
             
             <div className="cover">
@@ -45,7 +46,7 @@ const Header = () => {
             
             <nav className="navbar navbar-expand-lg main-navbar bg-color main-navbar-color" id="main-navbar">
                 <div className="container">
-                    <a className="navbar-brand" href="#">Cherish <i className="fa fa-heart-o" style={{fontSize:'24px'}}></i> Your Journey</a>
+                    <a className="navbar-brand" href="#Cherish_your_journey.html">Cherish <i className="fa fa-heart-o" style={{fontSize:'24px'}}></i> Your Journey</a>
                     <div className="order-lg-last btn-group">
                         <i className="fas fa-shopping-bag fa-2x"></i>
                     </div>
@@ -58,13 +59,13 @@ const Header = () => {
                                 <a href="../Hotel_&_Resorts/Hotel_&_Resort.html" className="nav-link">Hotel & Resorts</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Flights</a>
+                                <a href="Flights.html" className="nav-link">Flights</a>
                             </li>
                             <li className="nav-item">
                                 <a href="../Trip_Ideas/trip_idea/trip_idea.html" className="nav-link">Trip Ideas</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Wallet</a>
+                                <a href="Booknow.html" className="nav-link">Wallet</a>
                             </li>
                         </ul>
                     </div>
@@ -72,6 +73,18 @@ const Header = () => {
             </nav>
             
         </section>
+        <section id="hero">
+            <div className="hero-container">
+                <div className="hero-logo">
+                    <h1 className="font-weight-bold">Cherish <i className="fa fa-heart-o" style={{fontSize:'24px'}}></i> Your Journey</h1>
+                </div>
+                <h2 className="font-weight-bold">Choose Your Hotel</h2>
+                <div className="actions">
+                    <a href="booknow.html" className="btn-get-started bg-warning">Book Now</a>
+                </div>
+            </div>
+        </section>
+        </>
     )
 }
 
