@@ -3,26 +3,26 @@ import './Search.css';
 
 const Search = () => {
     return(
-        <div class="container-fluid maincontainer"> 
+        <div className="container-fluid maincontainer"> 
             <button onclick="changeMode()">DarkMode</button>        
-            <div class="clearfix">  
+            <div className="clearfix">  
                 <div class="p-3 float-right">
-                <button type="button" class="btn btn-outline-light text-light;">Log In</button>
-                <button type="button" class="btn btn-outline-light text-light;">Create an account</button>
+                <button type="button" className="btn btn-outline-light text-light;">Log In</button>
+                <button type="button" className="btn btn-outline-light text-light;">Create an account</button>
                 </div>
             </div>
 
-            <div class="p-1 d-flex justify-content-center">
-                <span class="mb-3 d-flex justify-content-center logo">e!</span>
+            <div className="p-1 d-flex justify-content-center">
+                <span className="mb-3 d-flex justify-content-center logo">e!</span>
             </div>
 
-            <div class="container d-flex justify-content-center heading">
+            <div className="container d-flex justify-content-center heading">
                 Find The Best Restaurent, Cafes and Bars
             </div>
 
             <div class="container d-flex justify-content-center">    
                 <form>
-                    <select style={{width:'40%'}} name="Location" id="city" class="custom-select" onchange="recommend()">
+                    <select style={{width:'40%'}} name="Location" id="city" className="custom-select" onchange="recommend()">
                         <option selected> Select Location </option>
                         <option value="Mumbai">Mumbai</option>
                         <option value="Pune">Pune</option>
