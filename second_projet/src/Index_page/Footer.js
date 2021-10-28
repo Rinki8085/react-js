@@ -11,7 +11,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div class="align-center">
+                <div className="align-center">
                     <i className="fa fa-twitter" style={{fontSize:'20px',color:'white'}}></i>
                     <i className="fa fa-facebook" style={{fontSize:'20px',color:'white'}}></i>
                     <i className="fa fa-instagram" style={{fontSize:'20px',color:'white'}}></i>
