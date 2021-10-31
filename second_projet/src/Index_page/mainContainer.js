@@ -147,7 +147,7 @@ const MainContainer = () => {
 
                                 <div className="text text-center">
                                     <span className="week">12% Discount</span>
-                                    <h2>Peaceful place</h2>
+                                    <h2>Peaceful Places</h2>
                                 </div>
                             </div>    
                         </div>
@@ -159,7 +159,7 @@ const MainContainer = () => {
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>International Place</h2>
+                                    <h2>International Places</h2>
                                 </div>
                             </div>    
                         </div>
@@ -171,7 +171,7 @@ const MainContainer = () => {
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>Religious Place</h2>
+                                    <h2>Religious Places</h2>
                                 </div>
                             </div>    
                         </div>
@@ -183,19 +183,19 @@ const MainContainer = () => {
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>Romantic Place</h2>
+                                    <h2>Romantic Places</h2>
                                 </div>
                             </div>    
                         </div>
 
                         <div className="col-md-3 col-sm-6 d-flex">
                             <div className="trip idea">
-                                <div clclassNameass="img d-flex align-item-center justify-content-center" 
+                                <div className="img d-flex align-item-center justify-content-center" 
                                 style={{background: `url(${'https://i.ibb.co/JqNkyt1/trip7img.jpg'}`}}>
                                 </div>
 
                                 <div className="text text-center">
-                                    <h2>Place</h2>
+                                    <h2>Sea Places</h2>
                                 </div>
                             </div>    
                         </div>

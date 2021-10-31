@@ -12,15 +12,15 @@ const Footer = () => {
                 </div>
 
                 <div className="align-center">
-                    <i className="fa fa-twitter" style={{fontSize:'20px',color:'white'}}></i>
-                    <i className="fa fa-facebook" style={{fontSize:'20px',color:'white'}}></i>
-                    <i className="fa fa-instagram" style={{fontSize:'20px',color:'white'}}></i>
+                    <i className="fa fa-twitter" style={{fontSize:'20px',color:'white',marginLeft:'5px'}}></i>
+                    <i className="fa fa-facebook" style={{fontSize:'20px',color:'white',marginLeft:'5px'}}></i>
+                    <i className="fa fa-instagram" style={{fontSize:'20px',color:'white',marginLeft:'5px'}}></i>
                 </div>
 
                 <div className="align-right">
-                    <i className="fab fa-cc-paypal" style={{fontSize:'20px',color:'white'}}></i>
-                    <i className='fab fa-cc-mastercard' style={{fontSize:'20px',color:'white'}}></i>
-                    <i className="fab fa-cc-visa" style={{fontSize:'20px',color:'white'}}></i>
+                    <i className="fab fa-cc-paypal" style={{fontSize:'20px',color:'white',marginLeft:'5px'}}></i>
+                    <i className='fab fa-cc-mastercard' style={{fontSize:'20px',color:'white',marginLeft:'5px'}}></i>
+                    <i className="fab fa-cc-visa" style={{fontSize:'20px',color:'white',marginLeft:'5px'}}></i>
                 </div>
             </div>
         </section> 
