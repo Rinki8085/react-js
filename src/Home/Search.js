@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import './Search.css';
 
 const locationurl = "https://zomoapp.herokuapp.com/location";
-//const resturl = "https://zomoapp.herokuapp.com/restaurant?stateId=1";
+const restUrl = "https://zomoapp.herokuapp.com/restaurant?stateId=";
 
 class Search extends Component {
-    constructor(props){
+    constructor(props) {
         super()
 
         this.state={
@@ -17,17 +17,40 @@ class Search extends Component {
     renderCity = (data) => {
         if(data){
             return data.map((item) => {
-                <option value={item.state_id}>{item.state}</option>
+                return(
+                    <option value={item.state_id} key={item.state_id}>{item.state}</option>
+                )
             })
         }
     }
 
+    renderRestaurants = (data) => {
+        if(data){
+            return data.map((item) => {
+                return(
+                <option>{item.restaurant_name} | {item.address}</option>
+                )
+            })
+        }
+    }
+
+    handleCity = (event) => {
+        console.log(event.target.value)
+        const stateId = event.target.value;
+        fetch(`${restUrl}${stateId}`,{method:'GET'})
+        .then((res) => res.json())
+        .then((data) => {
+            this.setState({restaurant:data})
+        })
+    }
+
     render(){
+        console.log(this.state.restaurant)
         return(
             <div className="container-fluid maincontainer"> 
-                <button onclick="changeMode()">DarkMode</button>        
+                <button>DarkMode</button>        
                 <div className="clearfix">  
-                    <div class="p-3 float-right">
+                    <div className="p-3 float-right">
                     <button type="button" className="btn btn-outline-light text-light;">Log In</button>
                     <button type="button" className="btn btn-outline-light text-light;">Create an account</button>
                     </div>
@@ -41,14 +64,16 @@ class Search extends Component {
                     Find The Best Restaurent, Cafes and Bars
                 </div>
 
-                <div class="container d-flex justify-content-center">    
+                <div className="container d-flex justify-content-center">    
                     <form>
-                        <select style={{width:'40%'}} name="Location" id="city" className="custom-select">
+                        <select style={{width:'40%'}} className="custom-select" onChange={this.handleCity}>
                             {this.renderCity(this.state.location)}
+                            <option>--select Location</option>
                         </select>
 
-                        <select style={{width:'58%'}} name="Restaurent_Places" class="custom-select">
-                            
+                        <select style={{width:'58%'}} className="custom-select">
+                            {this.renderRestaurants(this.state.restaurant)}
+                            <option>--select Restaurent</option>
                         </select>
                     </form>
                 </div>
@@ -58,7 +83,7 @@ class Search extends Component {
 
     // on page load we hae to call api
     componentDidMount(){
-        fetch(locationurl,{method:'GET'})
+        fetch({locationurl},{method:'GET'})
         .then((res) => res.json())
         .then((data) => {
             this.setState({location:data})
