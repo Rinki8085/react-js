@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './Search.css';
 
-const locationurl = "https://zomoapp.herokuapp.com/location";
-const restUrl = "https://zomoapp.herokuapp.com/restaurant?stateId=";
+const locationurl = "https://zomatoajulypi.herokuapp.com/location";
+const restUrl = "https://zomatoajulypi.herokuapp.com/restaurant?stateId=";
 
 class Search extends Component {
     constructor(props) {
@@ -45,7 +45,7 @@ class Search extends Component {
     }
 
     render(){
-        console.log(this.state.restaurant)
+        
         return(
             <div className="container-fluid maincontainer"> 
                 <button>DarkMode</button>        
@@ -81,9 +81,9 @@ class Search extends Component {
         )
     }
 
-    // on page load we hae to call api
-    componentDidMount(){
-        fetch({locationurl},{method:'GET'})
+     // on page load we have to call api
+     componentDidMount(){
+        fetch(locationurl,{method:'GET'})
         .then((res) => res.json())
         .then((data) => {
             this.setState({location:data})
