@@ -47,8 +47,7 @@ class Search extends Component {
     render(){
         
         return(
-            <div className="container-fluid maincontainer"> 
-                <button>DarkMode</button>        
+            <div className="container-fluid maincontainer">      
                 <div className="clearfix">  
                     <div className="p-3 float-right">
                     <button type="button" className="btn btn-outline-light text-light;">Log In</button>

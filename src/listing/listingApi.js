@@ -1,12 +1,13 @@
 import React,{Component} from 'react';
 import axios from 'axios';
+import ListingDisplay from './listingDisplay';
 
-const url = "https://zomoajulypi.herokuapp.om.restaurant?mealtype_id=";
+const url = "https://zomatoajulypi.herokuapp.com/restaurant?mealtype_id="
 
 class Listing extends Component {
     constructor(props){
         super()
-        
+
         this.state={
             restaurantList:''
         }
@@ -15,14 +16,15 @@ class Listing extends Component {
     render(){
         return(
             <div className="row">
-                <listingDisplay listData={this.state.restaurantList}/>
+                <ListingDisplay listData={this.state.restaurantList}/>
             </div>
         )
     }
 
+    // callapi 
     componentDidMount(){
         let mealId = this.props.match.params.mealId;
-        sessionStorage.setItem("mealId",mealId)
+        sessionStorage.setItem('mealId',mealId)
         axios.get(`${url}${mealId}`)
         .then((res) => {this.setState({restaurantList:res.data})})
     }

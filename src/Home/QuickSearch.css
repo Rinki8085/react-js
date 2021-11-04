@@ -1,20 +1,29 @@
+.image_con{
+  float:left;
+  margin:3px 3px 3px 3px;
+}
 
-  .text{
-    color:navy;
+.tilecontainer{
+    margin:0;
+    border-radius:5px;
+    -webkit-box-shadow: 0 0 5px 2px grey;
+    -moz-box-shadow: 0 0 5px 2px grey;
+    box-shadow: 0 0 5px 2px grey;
+    float:left;
+  }
+  
+  .tilecontainer:hover, .tilecontainer:active{
+    background-color:papayawhip;
+  }
+  
+  .txt1{
+    font-size:28px; 
+    color:darkblue; 
     font-weight: bold;
-    font-size: 20px;
   }
-
-  .tilecontainer{
-    background-color:cornsilk; 
-    box-shadow: 5px 5px 10px grey;
-    margin-left:35px;
-    margin-top:10px;
-  }
-
-  .tile_img{
-    float:left; 
-    margin-right:5px; 
-    width:180px; 
-    height:200px;
+  
+  .txt2{
+    font-size:21px; 
+    color:darkgrey; 
+    font-weight: bold;
   }

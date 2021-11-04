@@ -9,12 +9,16 @@ const QuickSearch = (props) => {
       return quickData.map((item) => {
         return (
           <Link to={`/list/${item.mealtype_id}`}>
-            <div className="col-md-5 col-xs-12 col-lg-3 tilecontainer" key={item.mealtype_id}>
-                  <div><img src={item.meal_image} alt="For Breakfast" className="tile_img"/></div>
-                  <div className="text mb-2 mt-2">{item.mealtype}</div>
-                  <div style={{color:'slategray'}}>{item.content}</div>
-              </div>
-            </Link>
+            <div className="col-md-6 col-sm-10 col-lg-10 mr-2 mb-2 tilecontainer" key={item.mealtype_id}>                        
+                <div className="image_con">
+                    <img src={item.meal_image} alt="Business" style={{width:'150px', height:'150px', borderRadius:'5px;'}}/>
+                </div>
+                <div>
+                    <div className="txt1">{item.mealtype}</div>
+                    <div className="txt2">{item.content}</div>
+                </div>
+            </div>
+          </Link>
         )
       })
     }
@@ -29,8 +33,11 @@ const QuickSearch = (props) => {
           </div>
  
           <div className="container-fluid p-2">
-            <div className="row">
-            {listMeal(props)}
+            
+            <div className="container mt-4">
+              <div className="row">
+                {listMeal(props)}
+              </div>
             </div>
           </div>
         </div>

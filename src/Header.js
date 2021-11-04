@@ -3,10 +3,15 @@ import './Header.css';
 
 const Header = () => {
     return(
-        <div>
-            <h2>Header</h2>
-            <hr/>
-        </div>
+            <div id="headings">
+                <div className="divisions">
+                    <h1>e!</h1>
+                </div>
+                <div className="container">
+                    <button type="button">Log In</button>
+                    <button type="button">Create an account</button>
+                </div>
+            </div>
     )
 }
 
