@@ -4,7 +4,7 @@ import QuickApi from './QuickApi';
 
 const Home = () => {
     return(
-        <div id='container-fluid'>
+        <div className="container-fluid">
             <Search/>
             <QuickApi/>
         </div>

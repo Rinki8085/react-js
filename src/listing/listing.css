@@ -36,17 +36,18 @@
 
 .item {
     width: 875px;
-    height: 320px;
+    height: 264px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     margin-bottom: 20px;
 }
 
 .Image {
-    width: 340px;
-    height: 260px;
+    width: 237px;
+    height: 222px;
     border-radius: 23px;
     background-color: #ea6060;
     margin-left:5%;
+    margin-top:6%;
 }
 
 .hotel_name {
@@ -60,7 +61,7 @@
     line-height: 2;
     letter-spacing: normal;
     text-align: left;
-    color: #192f60;
+    color: midnightblue;
 }
 
 .city_name {
@@ -74,7 +75,7 @@
     line-height: 2.4;
     letter-spacing: normal;
     text-align: left;
-    color: #192f60;
+    color: darkslategrey;
 }
 
 .rating {

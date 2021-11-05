@@ -1,17 +1,20 @@
 import React from 'react';
 import './Header.css';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     return(
-            <div id="headings">
-                <div className="divisions">
-                    <h1>e!</h1>
+            <header id="headings">
+                <div className="divisions row justify-content-center">
+                    <Link to="/"><span>e!</span></Link>
                 </div>
-                <div className="container">
-                    <button type="button">Log In</button>
-                    <button type="button">Create an account</button>
-                </div>
+                <div class="clearfix">  
+            <div class="p-3 float-right">
+              <button type="button" class="btn btn-outline-light text-light;">Log In</button>
+              <button type="button" class="btn btn-outline-light text-light;">Create an account</button>
             </div>
+          </div>
+            </header>
     )
 }
 

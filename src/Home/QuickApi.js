@@ -4,14 +4,13 @@ import QuickSearch from './QuickSearch';
 const url = "https://zomatoajulypi.herokuapp.com/quicksearch"
 
 class QuickApi extends Component {
-    constructor (props){
+    constructor(props) {
         super(props);
 
         this.state={
             QuickData:''
         }
     }
-
     render(){
         return(
             <div>
@@ -20,7 +19,7 @@ class QuickApi extends Component {
         )
     }
 
-    //api call
+    // api call
     componentDidMount(){
         fetch(url)
         .then((res) => res.json())
@@ -28,6 +27,7 @@ class QuickApi extends Component {
             this.setState({QuickData:data})
         })
     }
+
 }
 
 export default QuickApi;

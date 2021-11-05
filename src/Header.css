@@ -17,3 +17,9 @@
     left: 49px;
  }
  
+ span{
+    font-size: 40px;
+    font-weight:bold;
+    text-align:center;
+    padding: auto;
+ }
