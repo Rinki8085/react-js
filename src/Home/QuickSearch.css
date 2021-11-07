@@ -12,7 +12,8 @@
   font-size:30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   display:block;
-  font-weight:bold
+  font-weight:bold;
+  text-align: left;   
 }
 
 #QuickSubHeading{
@@ -68,32 +69,8 @@
 }
 
 .tileContainer:hover{
- transform: scale(1.1)
+ transform: scale(1.02)
 }
-
-.bike{
-  margin-left:1%;
-  animation: moveBike 20s infinite;
-}
-
-/*
-.bike{
-  margin-left:1%;
-  transition: margin-left 5s;
-}
-.bike:hover{
-  margin-left:90%
-}
-*/
-
-@keyframes moveBike {
-  0% {margin-left:10%}
-  20% {margin-left:40%}
-  60% {margin-left:65%}
-  80% {margin-left:95%}
-  100% {margin-left:0%}
-}
-
 
 @media screen and (max-width:1600px){
   body{

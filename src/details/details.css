@@ -1,0 +1,13 @@
+.galButton{
+   position: absolute;
+   left:72%;
+   top:50%;
+   background-color: snow;
+}
+
+.restHeading{
+    color:midnightblue;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:30px;
+}

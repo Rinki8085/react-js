@@ -50,8 +50,8 @@ class Search extends Component {
             <div className="container-fluid maincontainer">      
                 <div className="clearfix">  
                     <div className="p-3 float-right">
-                    <button type="button" className="btn btn-outline-light text-light;">Log In</button>
-                    <button type="button" className="btn btn-outline-light text-light;">Create an account</button>
+                        <button type="button" className="btn btn-outline-light text-light;">Log In</button>
+                        <button type="button" className="btn btn-outline-light text-light;">Create an account</button>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ class Search extends Component {
                 </div>
 
                 <div className="container d-flex justify-content-center heading">
-                    Find The Best Restaurent, Cafes and Bars
+                    Find The Best Reståurânts, Câfes and Bârs
                 </div>
 
                 <div className="container d-flex justify-content-center">    
