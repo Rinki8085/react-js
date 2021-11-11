@@ -24,7 +24,7 @@
     height:600px;
     width:20%;
     float: left;
-    border: 5px solid gray;
+    box-shadow:5px 5px 5px lightgrey;
 }
 #content{
     width:65%;

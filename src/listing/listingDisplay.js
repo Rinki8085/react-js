@@ -74,7 +74,6 @@ const ListingDisplay = (props) => {
         <Header/>
         <div id="mainListing">
             <div id="filter">
-                Filter
                 <div style={{marginLeft:'20px'}}>
                     <h3>Filters</h3>
                     
@@ -101,4 +100,4 @@ const ListingDisplay = (props) => {
     )
 }
 
-export default ListingDisplay;
+export default ListingDisplay

@@ -49,7 +49,7 @@ class Details extends Component {
                                 </TabPanel>
                                 <TabPanel>
                                     <h3 style={{color:'midnightblue'}}><b>Menu</b></h3>
-                                    <MenuDisplay menudata={this.state.menuList}/>
+                                    <MenuDisplay menudata={this.state.menuList} restId={this.props.match.restId}/>
                                 </TabPanel>
                                 <TabPanel>
                                     <h4><b>Contact</b></h4>
@@ -59,7 +59,6 @@ class Details extends Component {
                                     <p>{details.address}</p>
                                 </TabPanel>
                             </Tabs>
-                        <div className="btn btn-danger">Place online order</div>
                     </div>
                 </div>
             </div>

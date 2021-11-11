@@ -11,3 +11,16 @@
     font-weight:bold;
     font-size:30px;
 }
+
+.restImage{
+    width:200px;
+    height:120px;
+    margin-top:5px;
+
+}
+
+.details{
+    margin-bottom: 5px;
+    box-shadow:5px 5px 5px grey;
+    background-color: white;
+}
