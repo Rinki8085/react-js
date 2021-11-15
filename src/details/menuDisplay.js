@@ -8,6 +8,11 @@ class MenuDisplay extends Component {
         this.props.finalOrder(this.orderId)
     } 
 
+    removeOrder = (id) => {
+        this.orderId.splice(this.orderId.indexOf(id.toString()),1)
+        this.props.finalOrder(this.orderId)
+    }
+
     renderMenu = ({menudata}) => {
         if(menudata){
             return menudata.map((item) => {
@@ -15,7 +20,7 @@ class MenuDisplay extends Component {
                     <React.Fragment>
                         <div className="container" key={item.menu_id}>
                             <div className="row details">
-                                <div className="col-md-4">
+                                <div className="col-sm-4">
                                     <img src={item.menu_image} alt="restaurant_image" className="restImage" />
                                 </div>
                                 <div className="col-md-6">
@@ -25,7 +30,7 @@ class MenuDisplay extends Component {
                                 </div>
                                 <div className='col-sm-2'>
                                     <button type="button" className="btn btn-info" onClick={() => {this.placeOrder(item.menu_id)}}><i className="fas fa-plus"></i></button>
-                                    <button type="button" className="btn btn-danger" onClick={() => {this.placeOrder(item.menu_id)}}><i className="fas fa-minus"></i></button>
+                                    <button type="button" className="btn btn-danger" onClick={() => {this.removeOrder(item.menu_id)}}><i className="fas fa-minus"></i></button>
                                 </div>
                             </div>
                         </div>

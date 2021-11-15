@@ -15,6 +15,7 @@
     position: absolute;
     top: 33px; 
     left: 49px;
+    z-index:3;
  }
  
  span{

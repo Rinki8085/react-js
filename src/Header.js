@@ -8,12 +8,12 @@ const Header = () => {
                 <div className="divisions row justify-content-center">
                     <Link to="/"><span>e!</span></Link>
                 </div>
-                <div class="clearfix">  
-            <div class="p-3 float-right">
-              <button type="button" class="btn btn-outline-light text-light;">Log In</button>
-              <button type="button" class="btn btn-outline-light text-light;">Create an account</button>
-            </div>
-          </div>
+                <div className="clearfix">  
+                  <div className="p-3 float-right">
+                    <button type="button" className="btn btn-outline-light text-light;">Log In</button>
+                    <button type="button" className="btn btn-outline-light text-light;">Create an account</button>
+                  </div>
+               </div>
             </header>
     )
 }

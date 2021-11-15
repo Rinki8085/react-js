@@ -41,7 +41,7 @@ class Details extends Component {
                     <div className="card" style={{width:'80%', marginLeft:'8%',backgroundColor:'wheat'}}>
                         <div>
                             <img className="card-img-top" src={details.restaurant_thumb} alt="Card" style={{width:'100%'}}/>
-                            </div>
+                        </div>
                         <div className="card-body">
                             <h2 className="card-title restHeading">{this.state.details.restaurant_name}</h2>
                             <Tabs>

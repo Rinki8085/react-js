@@ -1,5 +1,23 @@
 .menu{
     box-shadow:5px 5px 5px grey;
     float:left;
-    margin-right:5px
+    margin-right:5px;
+    width:250px;
+    height:300px;
+    margin-left: 10px;
+    margin-bottom:8px;
+}
+
+.card-image{
+    width:250px;
+}
+
+.card-image img{
+    width:250px;
+    height:130px;
+}
+
+.form{
+    margin-top:10px;
+    margin-bottom:10px;
 }

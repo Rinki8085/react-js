@@ -3,14 +3,39 @@ import Header from '../Header';
 import './placeorder.css'
 
 const url = "https://zomatoajulypi.herokuapp.com/menuItem";
+const PostUrl = "https://zomatoajulypi.herokuapp.com/placeOrder";
 
 class PlaceOrder extends Component{
     constructor(props){
         super(props)
 
         this.state={
-            details:''
+            details:'',
+            amount:0,
+            name:'',
+            phone:0,
+            address:'',
+            email:''
         }
+    }
+
+    handleChange = (event) => {
+        this.setState({[event.target.name]:event.target.value})
+        
+    }
+
+    
+    handleSubmit = () => {
+        console.log(this.state)
+        fetch(PostUrl,{
+            method:'POST',
+            headers:{
+                'accept':'application/json',
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(this.state)
+        })
+        .then(console.log('order placed'))
     }
 
     renderItems = (data) => {
@@ -19,18 +44,28 @@ class PlaceOrder extends Component{
            return data.map((item) => {
                 return(
                     <>
-                    <div className="menu card" style={{}}>
-                        <div className="card-Image">
-                            <img src={item.menu_image} style={{width:'220px',height:'120px'}} alt="menuImage"/>
+                    <div className="menu card" key={this.menu_id}>
+                        <div className="card-image">
+                            <img src={item.menu_image} alt="menuImage"/>
                         </div>
                         <div className="card-body">
                             <h4>{item.menu_name}</h4>
+                            <p><span className="badge badge-success">{item.menu_type}</span></p>
                             <p>Rs. {item.menu_price}</p>
                         </div>
                     </div>
                     </>
                 )
             })
+        }else{
+            return(
+                <div>
+                    <div className="spinner-border text-muted"></div>
+                    <div className="spinner-grow text-muted"></div>
+                    <div className="spinner-border text-success"></div>
+                    <div className="spinner-grow text-success"></div>
+                </div>
+            )
         }
     }
 
@@ -38,7 +73,7 @@ class PlaceOrder extends Component{
         return(
             <>
                 <Header/>
-                <div className="container">
+                <div className="container" key={this.state.amount}>
                     <br/>
                     <div className="card">
                         <div className="card-heading" style={{backgroundColor:'powderblue'}}>
@@ -48,7 +83,38 @@ class PlaceOrder extends Component{
                         <div className="card-body">
                             {this.renderItems(this.state.details)}
                         </div>
-                    </div>
+                        <div style={{marginLeft:'10px',color:'maroon'}}><b><h3> Total Price : {this.state.amount}</h3></b></div>
+                    </div>    
+                    <form className="form row">
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <label><b>Name</b></label>
+                                <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}/>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <label><b>Email</b></label>
+                                <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}/>
+                            </div> 
+                        </div>
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <label><b>Phone</b></label>
+                                <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <label><b>Address</b></label>
+                                <textarea className="form-control" name="address" value={this.state.address} onChange={this.handleChange}/>
+                            </div>
+                        </div> 
+                        <div className="row">
+                            <button className="btn btn-success" onClick={this.handleSubmit}>Checkout</button>
+                        </div>   
+                    </form> 
+                               
                 </div>
             </>
         )
@@ -72,7 +138,12 @@ class PlaceOrder extends Component{
         .then((res) => res.json())
         .then((data) => 
         {
-            this.setState({details:data})
+            var Totalprice = 0;
+            data.map((item) => {
+                Totalprice = Totalprice+parseInt(item.menu_price)
+                return 'ok'
+            })
+            this.setState({details:data,amount:Totalprice})
         })
     }
 }
