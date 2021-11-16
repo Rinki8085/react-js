@@ -3,14 +3,23 @@ import ViewOrder from './viewOrder';
 import Header from '../Header';
 import axios from 'axios';
 
-const url = "https://zoatoajulyapi.herokuapp.com/vivewOrder"
+const url = "https://zomatoajulyapi.herokuapp.com/viewOrder"
 
 class ViewOrderApi extends Component{
+    constructor(){
+        super()
+
+        this.state={
+            orders:''
+        }
+    }
+
     render(){
         return(
             <>
-            <Header/>
-            <ViewOrder orderData={this.state.orders}/>
+                <Header/>
+                <ViewOrder orderData={this.state.orders}/>
+                
             </>
         )
     }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import './Search.css';
 
 const locationurl = "https://zomatoajulypi.herokuapp.com/location";
@@ -28,7 +29,7 @@ class Search extends Component {
         if(data){
             return data.map((item) => {
                 return(
-                <option>{item.restaurant_name} | {item.address}</option>
+                <option value={item.state_id} key={item.state_id}>{item.restaurant_name} | {item.address}</option>
                 )
             })
         }
@@ -42,6 +43,10 @@ class Search extends Component {
         .then((data) => {
             this.setState({restaurant:data})
         })
+    }
+
+    handleRest = (event) => {
+        this.props.history.push(`details/${event.target.value}`)
     }
 
     render(){
@@ -70,7 +75,7 @@ class Search extends Component {
                             <option>--select Location</option>
                         </select>
 
-                        <select style={{width:'58%'}} className="custom-select">
+                        <select style={{width:'58%'}} className="custom-select" onChange={this.handleRest}>
                             {this.renderRestaurants(this.state.restaurant)}
                             <option>--select Restaurent</option>
                         </select>
@@ -90,4 +95,4 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default withRouter(Search);

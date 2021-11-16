@@ -11,11 +11,13 @@ class PlaceOrder extends Component{
 
         this.state={
             details:'',
+            hotel_name:this.props.match.params.restName,
             amount:0,
             name:'',
             phone:0,
             address:'',
-            email:''
+            email:'',
+            status:'pending'
         }
     }
 
@@ -35,7 +37,7 @@ class PlaceOrder extends Component{
             },
             body:JSON.stringify(this.state)
         })
-        .then(console.log('order placed'))
+        .then(this.props.history.push('/viewOrderApi'))
     }
 
     renderItems = (data) => {
@@ -111,7 +113,9 @@ class PlaceOrder extends Component{
                             </div>
                         </div> 
                         <div className="row">
-                            <button className="btn btn-success" onClick={this.handleSubmit}>Checkout</button>
+                            <div className="col-md-4">
+                                <button className="btn btn-success" onClick={this.handleSubmit}>Checkout</button>
+                            </div>   
                         </div>   
                     </form> 
                                
