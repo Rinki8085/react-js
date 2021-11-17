@@ -26,9 +26,7 @@ class PlaceOrder extends Component{
         
     }
 
-    
     handleSubmit = () => {
-        console.log(this.state)
         fetch(PostUrl,{
             method:'POST',
             headers:{
@@ -71,6 +69,8 @@ class PlaceOrder extends Component{
         }
     }
 
+    
+
     render(){
         return(
             <>
@@ -109,7 +109,7 @@ class PlaceOrder extends Component{
                         <div className="col-md-6">
                             <div className="form-group">
                                 <label><b>Address</b></label>
-                                <textarea className="form-control" name="address" value={this.state.address} onChange={this.handleChange}/>
+                                <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}/>
                             </div>
                         </div> 
                         <div className="row">
@@ -117,8 +117,7 @@ class PlaceOrder extends Component{
                                 <button className="btn btn-success" onClick={this.handleSubmit}>Checkout</button>
                             </div>   
                         </div>   
-                    </form> 
-                               
+                    </form>       
                 </div>
             </>
         )
@@ -141,12 +140,12 @@ class PlaceOrder extends Component{
         })
         .then((res) => res.json())
         .then((data) => 
-        {
+        { 
             var Totalprice = 0;
             data.map((item) => {
                 Totalprice = Totalprice+parseInt(item.menu_price)
                 return 'ok'
-            })
+            }) 
             this.setState({details:data,amount:Totalprice})
         })
     }

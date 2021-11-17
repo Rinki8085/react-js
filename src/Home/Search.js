@@ -36,7 +36,6 @@ class Search extends Component {
     }
 
     handleCity = (event) => {
-        console.log(event.target.value)
         const stateId = event.target.value;
         fetch(`${restUrl}${stateId}`,{method:'GET'})
         .then((res) => res.json())

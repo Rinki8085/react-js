@@ -40,11 +40,24 @@ class MenuDisplay extends Component {
         }
     }
 
+    renderCart = (orders) => {
+        if(orders){
+            return orders.map((item,index) => {
+                return (
+                    <b key={index}> {item} &nbsp;&nbsp; </b> 
+                )
+            })
+        }
+    }
+
     render(){
         console.log(">>>>>>>>>>>>",this.props)
         return(
             <div>
                 {this.renderMenu(this.props)}    
+                <div>
+                    <h4>Item {this.renderCart(this.orderId)} Added.</h4>
+                </div>
             </div>
         )
     }  

@@ -21,4 +21,4 @@ class CuisineFilter extends Component{
     }
 }
 
-export default CuisineFilter;
+export default CuisineFilter;  
