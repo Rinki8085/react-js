@@ -21,7 +21,7 @@ class Details extends Component {
     }
 
     addToCart = (data) => {
-        // console.log("data is card",data)
+        console.log("data in card",data)
         this.setState({userItem:data})
     }
 
@@ -91,3 +91,5 @@ class Details extends Component {
 }
 
 export default Details;
+
+//https://zomoapp.herokuapp.com/quicksearch

@@ -6,7 +6,8 @@ const ViewOrder = (props) => {
         if(orderData){
             return orderData.map((item) => {
                 return(
-                    <tr>
+                    <tr style={{color:'black'}}>
+                        <td>{item.id}</td>
                         <td>{item.hotel_name}</td>
                         <td>{item.name}</td>
                         <td>{item.phone}</td>
@@ -22,23 +23,26 @@ const ViewOrder = (props) => {
 
     return(
         <div>
-            <center><h3>Orders</h3></center>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Rest Name</th>
-                        <th>Name</th>
-                        <th>Phone no.</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {renderTable(props)}
-                </tbody>
-            </table>
+            <br/><center><h2>Orders</h2></center><br/>
+            <div className="container">
+                <table className="table" style={{border:'1px solid black'}}>
+                    <thead style={{backgroundColor:'black',color:"white"}}>
+                        <tr>
+                            <th style={{backgroundColor:'grey',color:'white'}}>Id</th>
+                            <th>Rest Name</th>
+                            <th>Name</th>
+                            <th>Phone no.</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {renderTable(props)}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

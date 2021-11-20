@@ -1,5 +1,7 @@
 .menu{
-    box-shadow:5px 5px 5px grey;
+    -webkit-box-shadow: 0 0 5px 5px lightgray;
+    -moz-box-shadow: 0 0 5px 5px lightgray;
+    box-shadow: 0 0 5px 5px lightgray;
     float:left;
     margin-right:5px;
     width:250px;

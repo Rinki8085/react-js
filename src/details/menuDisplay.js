@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import './details.css'
 import {withRouter} from 'react-router-dom';
 
 class MenuDisplay extends Component {
@@ -23,7 +24,7 @@ class MenuDisplay extends Component {
                                 <div className="col-sm-4">
                                     <img src={item.menu_image} alt="restaurant_image" className="restImage" />
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-5">
                                     <h3>{item.menu_id}. {item.menu_name}</h3>
                                     <p><span className="badge badge-success">{item.menu_type}</span></p>
                                     <p>Rs.{item.menu_price}</p>
@@ -44,14 +45,15 @@ class MenuDisplay extends Component {
         if(orders){
             return orders.map((item,index) => {
                 return (
-                    <b key={index}> {item} &nbsp;&nbsp; </b> 
+                    <>
+                        <b key={index}> {item} &nbsp;&nbsp; </b> 
+                    </>
                 )
             })
         }
     }
 
     render(){
-        console.log(">>>>>>>>>>>>",this.props)
         return(
             <div>
                 {this.renderMenu(this.props)}    

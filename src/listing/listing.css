@@ -16,20 +16,24 @@
 }
 
 #mainListing{
-    margin-left: 12%;
+    margin-left: 1%;
     margin-top: 5%;
 }
 
 #filter{
-    height:600px;
-    width:20%;
+    height:487px;
+    width:18%;
     float: left;
-    box-shadow:5px 5px 5px lightgrey;
+    -webkit-box-shadow: 0 0 5px 5px lightgrey;
+    -moz-box-shadow: 0 0 5px 5px lightgrey;
+    box-shadow: 0 0 5px 5px lightgrey;
+    margin-left:7%;
+    margin-top:69px;
 }
 #content{
-    width:65%;
+    width:67%;
     float: left;
-    margin-left: 5%;
+    margin-left: 1%;
     margin-top: -1%;
 
 }
@@ -37,7 +41,9 @@
 .item {
     width: 875px;
     height: 264px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 0 5px 5px lightgrey;
+    -moz-box-shadow: 0 0 5px 5px lightgrey;
+    box-shadow: 0 0 5px 5px lightgrey;
     margin-bottom: 20px;
 }
 

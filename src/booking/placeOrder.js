@@ -1,9 +1,10 @@
 import React,{Component} from "react";
+import {withRouter} from 'react-router-dom';
 import Header from '../Header';
 import './placeorder.css'
 
 const url = "https://zomatoajulypi.herokuapp.com/menuItem";
-const PostUrl = "https://zomatoajulypi.herokuapp.com/placeOrder";
+const PostUrl = "https://zomoapp.herokuapp.com/placeOrder";
 
 class PlaceOrder extends Component{
     constructor(props){
@@ -23,7 +24,6 @@ class PlaceOrder extends Component{
 
     handleChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
-        
     }
 
     handleSubmit = () => {
@@ -39,7 +39,6 @@ class PlaceOrder extends Component{
     }
 
     renderItems = (data) => {
-       
         if(data){
            return data.map((item) => {
                 return(
@@ -67,9 +66,7 @@ class PlaceOrder extends Component{
                 </div>
             )
         }
-    }
-
-    
+    }   
 
     render(){
         return(
@@ -133,7 +130,7 @@ class PlaceOrder extends Component{
         fetch(url,{
             method:'POST',
             headers:{
-                'Accept':'applicationn/json',
+                'Accept':'application/json',
                 'Content-Type':'application/json'
             },
             body:JSON.stringify(orderId)
@@ -151,4 +148,4 @@ class PlaceOrder extends Component{
     }
 }
 
-export default PlaceOrder;
+export default withRouter(PlaceOrder);

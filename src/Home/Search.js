@@ -7,7 +7,7 @@ const restUrl = "https://zomatoajulypi.herokuapp.com/restaurant?stateId=";
 
 class Search extends Component {
     constructor(props) {
-        super()
+        super(props)
 
         this.state={
             location:'',

@@ -3,7 +3,7 @@ import ViewOrder from './viewOrder';
 import Header from '../Header';
 import axios from 'axios';
 
-const url = "https://zomatoajulyapi.herokuapp.com/viewOrder"
+const url = "https://zomoapp.herokuapp.com/viewOrder"
 
 class ViewOrderApi extends Component{
     constructor(){
