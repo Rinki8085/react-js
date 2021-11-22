@@ -3,7 +3,7 @@ import './details.css'
 import {withRouter} from 'react-router-dom';
 
 class MenuDisplay extends Component {
-    orderId = []
+    orderId = []  
     placeOrder = (id) => {
         this.orderId.push(`${id}`)
         this.props.finalOrder(this.orderId)

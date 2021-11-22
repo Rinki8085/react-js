@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './listing.css';
 import {Link} from 'react-router-dom';
+import Pagination from './Pagination';
 
 const ListingDisplay = (props) => {
 
+    const [showPerPage] = useState(2);
+
+    const [pagination, setPagination] = useState({
+        start: 0,
+        end: showPerPage
+    });
+
+    const onPaginationChange = (start, end) => {
+        setPagination({start:start, end:end})
+    }
+
     const renderList = ({listData}) => {
+
         if(listData){
             if(listData.length>0){
-                return listData.map((item) => {
+                return listData.slice(pagination.start, pagination.end).map((item) => {
                     return(
                         <div className="item" key={item.restaurant_id}>
                             <div className="row">
@@ -36,7 +49,7 @@ const ListingDisplay = (props) => {
                                                 {item.cuisines[1].cuisine_name}
                                             </span>
                                         </div>
-                                    </div>
+                                   </div>   
                                 </div>
                             </div>
                         </div>
@@ -54,7 +67,6 @@ const ListingDisplay = (props) => {
         }else{
             return(
                 <div>
-
                     <div className="spinner-border text-muted"></div>
                     <div className="spinner-grow text-muted"></div>
                     <div className="spinner-border text-success"></div>
@@ -69,7 +81,6 @@ const ListingDisplay = (props) => {
                     <div className="spinner-grow text-warning"></div>
                     <div className="spinner-border text-info"></div>
                     <div className="spinner-grow text-info"></div>
-
                 </div>
             )
             
@@ -83,8 +94,11 @@ const ListingDisplay = (props) => {
         <div id="mainListing">
             <div id="content">
                 {renderList(props)}
+                <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={props.listData.length}/>
             </div>
+            
         </div>
+        
         </>
     )
 }

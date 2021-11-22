@@ -72,32 +72,13 @@
  transform: scale(1.02)
 }
 
-@media screen and (max-width:1600px){
-  body{
-      background-color:lightgoldenrodyellow
-  }
-}
-
-@media screen and (max-width:1400px){
-  body{
-      background-color: lightsalmon
-  }
-}
-
 @media screen and (max-width:1200px){
-  body{
-      background-color: skyblue;
-  }
   .tileContainer{
       width: 40%;
   }
 }
 
 @media screen and (max-width:1000px){
-  body{
-      background-color: lightslategrey;
-      
-  }
   .tileContainer{
       width: 40%;
       
@@ -108,18 +89,12 @@
 }
 
 @media screen and (max-width:800px){
-  body{
-      background-color: lightpink;
-  }
   .tileContainer{
       width: 80%;
   }
 }
 
 @media screen and (max-width:600px){
-  body{
-      background-color: lightgreen;
-  }
   .tileContainer{
       width: 100%;
   }

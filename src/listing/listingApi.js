@@ -6,6 +6,7 @@ import CuisineFilter from '../Filters/cuisineFilter'
 import CostFilter from '../Filters/costFilter';
 import './listing.css';
 
+
 const url = "https://zomatoajulypi.herokuapp.com/restaurant?mealtype_id="
 
 class Listing extends Component {
@@ -26,10 +27,12 @@ class Listing extends Component {
             <>
             <Header/>
             <div className="row">
-                    <div id="filter">
+                <div id="filter">
+                    <div >
                     <h3>Filters</h3>
                         <CuisineFilter restPerCuisine={(data) => {this.setDataAsPerFilter(data)}}/> 
                         <CostFilter restPerCost={(data) => {this.setDataAsPerFilter(data)}}/> 
+                    </div>
                 </div>
                 <ListingDisplay listData={this.state.restaurantList}/>
             </div>
@@ -45,5 +48,7 @@ class Listing extends Component {
         .then((res) => {this.setState({restaurantList:res.data})})
     }
 }
+
+//<Pagination count={4} variant="outlined" color="secondary" />
 
 export default Listing;

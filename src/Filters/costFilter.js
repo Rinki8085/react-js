@@ -10,7 +10,7 @@ class CostFilter extends Component{
         let lcost = cost[0];
         let hcost = cost[1];
         let filterurl;
-        if(event.target.value==""){
+        if(event.target.value===""){
             filterurl = `${url}/${mealId}`
         }else{
             filterurl = `${url}/${mealId}?lcost=${lcost}&hcost=${hcost}`

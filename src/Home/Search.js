@@ -19,7 +19,9 @@ class Search extends Component {
         if(data){
             return data.map((item) => {
                 return(
-                    <option value={item.state_id} key={item.state_id}>{item.state}</option>
+                   <option value={item.state_id} key={item.state_id}>
+                       {item.state}
+                   </option>
                 )
             })
         }
@@ -29,7 +31,8 @@ class Search extends Component {
         if(data){
             return data.map((item) => {
                 return(
-                <option value={item.state_id} key={item.state_id}>{item.restaurant_name} | {item.address}</option>
+                    <><option value={item.state_id} key={item.state_id}>{item.restaurant_name} | {item.address}</option>
+                    </>
                 )
             })
         }
@@ -67,18 +70,17 @@ class Search extends Component {
                     Find The Best Reståurânts, Câfes and Bârs
                 </div>
 
-                <div className="container d-flex justify-content-center">    
-                    <form>
-                        <select style={{width:'40%'}} className="custom-select" onChange={this.handleCity}>
-                            {this.renderCity(this.state.location)}
-                            <option>--select Location</option>
-                        </select>
-
-                        <select style={{width:'58%'}} className="custom-select" onChange={this.handleRest}>
-                            {this.renderRestaurants(this.state.restaurant)}
-                            <option>--select Restaurent</option>
-                        </select>
-                    </form>
+                <div className="row align-items-center justify-content-center">    
+                    <select id="city" onChange={this.handleCity}>
+                        <option>---Select Location---</option>
+                        {this.renderCity(this.state.location)}
+                    </select>
+                    
+                    <select id="restaurants" onChange={this.handleRest}>
+                    <option>---Select Restaurant---</option>
+                        {this.renderRestaurants(this.state.restaurant)}
+                    </select>
+                    
                 </div>
             </div>
         )

@@ -9,7 +9,7 @@ class CuisineFilter extends Component{
         let mealId = sessionStorage.getItem('mealId');
         let cuisineId = event.target.value;
         let filterurl;
-        if(cuisineId==""){
+        if(cuisineId===""){
             filterurl = `${url}/${mealId}`
         }else{
             filterurl = `${url}/${mealId}?cuisine=${cuisineId}`
