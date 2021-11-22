@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
+import Header from '../Header'
 import './Search.css';
 
 const locationurl = "https://zomatoajulypi.herokuapp.com/location";
@@ -54,6 +55,8 @@ class Search extends Component {
     render(){
         
         return(
+            <>
+            <Header/>
             <div className="container-fluid maincontainer">      
                 <div className="clearfix">  
                     <div className="p-3 float-right">
@@ -80,9 +83,9 @@ class Search extends Component {
                     <option>---Select Restaurant---</option>
                         {this.renderRestaurants(this.state.restaurant)}
                     </select>
-                    
                 </div>
             </div>
+            </>
         )
     }
 

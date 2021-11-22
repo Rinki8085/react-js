@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 class MenuDisplay extends Component {
     orderId = []  
     placeOrder = (id) => {
+        console.log("id",`${id}`)
         this.orderId.push(`${id}`)
         this.props.finalOrder(this.orderId)
     } 

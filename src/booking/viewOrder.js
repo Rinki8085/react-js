@@ -4,7 +4,7 @@ const ViewOrder = (props) => {
 
     const renderTable = ({orderData}) => {
         if(orderData){
-            console.log(orderData.id)
+            console.log("viewOrder",orderData.id)
             return orderData.map((item) => {
                 return(
                     <tr style={{color:'black'}} key={item.id}>

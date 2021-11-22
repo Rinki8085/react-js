@@ -28,18 +28,19 @@ const QuickSearch = (props) => {
         }
     }
     return(
-
+        <>
         <div id="quicksearch">
-        <span id="QuickHeading">
-            Quick Searches
-        </span>
-        <span id="QuickSubHeading">
-            Discover reståurânts by type of meal
-        </span>
-        <div id="mainTileContainer">
-            {listMeal(props)}
-        </div> 
-    </div>
+            <span id="QuickHeading">
+                Quick Searches
+            </span>
+            <span id="QuickSubHeading">
+                Discover reståurânts by type of meal
+            </span>
+            <div id="mainTileContainer">
+                {listMeal(props)}
+            </div> 
+        </div>
+        </>
     )
 }
 

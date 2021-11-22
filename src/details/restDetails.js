@@ -21,7 +21,7 @@ class Details extends Component {
     }
 
     addToCart = (data) => {
-        console.log("data in card",data)
+        //console.log("data in card",data)
         this.setState({userItem:data})
     }
 
@@ -31,7 +31,7 @@ class Details extends Component {
     }
 
     render(){
-        console.log(">>>>>details",this.state.userItem)
+        //console.log(">>>>>details",this.state.userItem)
         let {details} = this.state;
 
         return(

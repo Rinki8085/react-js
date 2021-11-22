@@ -43,8 +43,8 @@ class PlaceOrder extends Component{
            return data.map((item) => {
                 return(
                     <>
-                    <div className="menu card" key={this.menu_id}>
-                        <div className="card-image">
+                    <div className="menu card" >
+                        <div className="card-image" key={this.menu_id}>
                             <img src={item.menu_image} alt="menuImage"/>
                         </div>
                         <div className="card-body">
@@ -122,6 +122,7 @@ class PlaceOrder extends Component{
 
     componentDidMount(){
         var menuItem = sessionStorage.getItem('menu');
+        console.log("menuItem",menuItem)
         var orderId = []
         menuItem.split(',').map((item) => {
             orderId.push(parseInt(item))
@@ -138,9 +139,19 @@ class PlaceOrder extends Component{
         .then((res) => res.json())
         .then((data) => 
         { 
-            var Totalprice = 0;
+            /*
+            data.map((item) =>{
+                Totalprice = Totalprice+Number(item[0].menu_price)
+            })
+
             data.map((item) => {
-                Totalprice = Totalprice+parseInt(item.menu_price)
+                Totalprice = Totalprice+parseInt(item.menu_price)            
+            */
+            var Totalprice = 0;
+            data.map((item) =>{
+                Totalprice = Totalprice+Number(item.menu_price)
+                //Totalprice = Totalprice+Number(Number(menuItem).menu_price)
+                console.log("totalprice",Totalprice)
                 return 'ok'
             }) 
             this.setState({details:data,amount:Totalprice})
