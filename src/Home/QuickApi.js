@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import QuickSearch from './QuickSearch';
 import './QuickSearch.css'
-import Footer from '../Footer'
 
 const url = "https://zomatoajulypi.herokuapp.com/quicksearch"
 
@@ -18,9 +17,6 @@ class QuickApi extends Component {
             <>
             <div>
                 <QuickSearch quickData={this.state.QuickData}/>
-            </div>
-            <div id="footer">
-            <Footer/>
             </div>
             </>
         )

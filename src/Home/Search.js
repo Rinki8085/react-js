@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import Header from '../Header'
 import './Search.css';
 
 const locationurl = "https://zomatoajulypi.herokuapp.com/location";
@@ -56,15 +55,8 @@ class Search extends Component {
         
         return(
             <>
-            <Header/>
             <div className="container-fluid maincontainer">      
-                <div className="clearfix">  
-                    <div className="p-3 float-right">
-                        <button type="button" className="btn btn-outline-light text-light;">Log In</button>
-                        <button type="button" className="btn btn-outline-light text-light;">Create an account</button>
-                    </div>
-                </div>
-
+                
                 <div className="p-1 d-flex justify-content-center">
                     <span className="mb-3 d-flex justify-content-center logo">e!</span>
                 </div>
@@ -73,17 +65,21 @@ class Search extends Component {
                     Find The Best Reståurânts, Câfes and Bârs
                 </div>
 
-                <div className="row align-items-center justify-content-center">    
-                    <select id="city" onChange={this.handleCity}>
-                        <option>---Select Location---</option>
-                        {this.renderCity(this.state.location)}
-                    </select>
-                    
-                    <select id="restaurants" onChange={this.handleRest}>
-                    <option>---Select Restaurant---</option>
-                        {this.renderRestaurants(this.state.restaurant)}
-                    </select>
+                <div className="row align-items-center justify-content-center">   
+                    <div style={{float:'left'}}>
+                        <select id="city" onChange={this.handleCity}>
+                            <option>---Select Location---</option>
+                            {this.renderCity(this.state.location)}
+                        </select>
+                    </div>
+                    <div>
+                        <select id="restaurants" onChange={this.handleRest}>
+                        <option>---Select Restaurant---</option>
+                            {this.renderRestaurants(this.state.restaurant)}
+                        </select>
+                    </div>
                 </div>
+                
             </div>
             </>
         )

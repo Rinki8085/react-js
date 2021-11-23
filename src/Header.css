@@ -1,9 +1,13 @@
-
 /*------header------*/
-#headings{
+ #headings{
     background-color:midnightblue;
     height:20%;
     width:100%;
+ }
+
+ .myDark{
+    background-color:black;
+    color:white;
  }
  
  /*-----icon of e!------*/
@@ -17,7 +21,7 @@
     left: 49px;
     z-index:3;
  }
- 
+  
  span{
     font-size: 40px;
     font-weight:bold;
