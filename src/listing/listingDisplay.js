@@ -22,38 +22,35 @@ const ListingDisplay = (props) => {
             if(listData.length>0){
                 return listData.slice(pagination.start, pagination.end).map((item) => {
                     return(
-                        <div className="item" key={item.restaurant_id}>
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <img className="Image" src={item.restaurant_thumb} alt="restaurant_image"/>
+                        <div className="container-fluid mb-3 mr-3 filter2" key={item.restaurant_id}>
+                            <div className="image_con">
+                                <img src={item.restaurant_thumb} alt="Business" className="Img"/>
+                            </div>
+                            <div className="display">
+                                <div style={{fontSize:'25px', color:'blue', fontWeight: 'bold'}}>
+                                 <Link to={`/details/${item.restaurant_id}`}>{item.restaurant_name}</Link>    
                                 </div>
-                                <div className="col-md-7">
-                                    <div className="hotel_name">
-                                        <Link to={`/details/${item.restaurant_id}`}>{item.restaurant_name}</Link>
-                                        <div className="city_name">{item.address}</div>
-                                        <div className="city_name rating">{item.rating_text}</div>
-                                        <div className="city_name rating">Rs.{item.cost}</div>
-                                        <div className="labelDiv">
-                                            <span className="badge badge-primary">
-                                                {item.mealTypes[0].mealtype_name}
-                                            </span> &nbsp;
-                                            <span className="badge badge-success">
-                                                {item.mealTypes[1].mealtype_name}
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <span className="badge badge-danger">
-                                                {item.cuisines[0].cuisine_name}
-                                            </span> &nbsp;
-                                            <span className="badge badge-info">
-                                                {item.cuisines[1].cuisine_name}
-                                            </span>
-                                        </div>
-                                   </div>   
+                                    <div style={{fontSize:'19px', fontWeight: 'bold'}}>
+                                    {item.address}<br/>
+                                    <span className="badge badge-danger">
+                                        {item.cuisines[0].cuisine_name}
+                                    </span> &nbsp;
+                                    <span className="badge badge-info">
+                                        {item.cuisines[1].cuisine_name}
+                                    </span>        
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <div>
+                                    <div className="display"><b>Cost for two:-</b></div>
+                                    <div className="display">
+                                        {item.cost}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                     )
                 })
             }else{
@@ -88,16 +85,14 @@ const ListingDisplay = (props) => {
 
     }
 
+
     return(
         <>
         
-        <div id="mainListing">
-            <div id="content">
+        
                 {renderList(props)}
                 <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={props.listData.length}/>
-            </div>
             
-        </div>
         
         </>
     )

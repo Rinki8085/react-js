@@ -5,6 +5,7 @@ const Pagination = ({showPerPage, onPaginationChange,total}) => {
     const [counter,setCounter] = useState(1);
     const[numberOfButtons] = useState(Number(Math.ceil(total/showPerPage)))
 
+    // eslint-disable-next-line
     useEffect(() => {
         const value = showPerPage * counter;
         onPaginationChange(value-showPerPage, value);
@@ -28,7 +29,7 @@ const Pagination = ({showPerPage, onPaginationChange,total}) => {
     }
 
     return (
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between ml-4">
             <button className="btn btn-primary" onClick={() => onButtonClick("prev")}>
                 Previous
             </button>

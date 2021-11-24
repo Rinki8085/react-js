@@ -2,10 +2,10 @@ import React,{Component} from 'react';
 import axios from 'axios';
 import ListingDisplay from './listingDisplay';
 import Header from '../Header';
+import Footer from '../Footer';
 import CuisineFilter from '../Filters/cuisineFilter'
 import CostFilter from '../Filters/costFilter';
 import './listing.css';
-
 
 const url = "https://zomatoajulypi.herokuapp.com/restaurant?mealtype_id="
 
@@ -26,16 +26,19 @@ class Listing extends Component {
         return(
             <>
             <Header/>
-            <div className="row">
-                <div id="filter">
-                    <div >
+            <div className="row mainContainer">
+                <div className="col-sm-3 ml-2 mt-4 filter">
+                
                     <h3>Filters</h3>
                         <CuisineFilter restPerCuisine={(data) => {this.setDataAsPerFilter(data)}}/> 
                         <CostFilter restPerCost={(data) => {this.setDataAsPerFilter(data)}}/> 
-                    </div>
+                    
                 </div>
-                <ListingDisplay listData={this.state.restaurantList}/>
+                <div className="col-lg-6 col-md-4 cl-sm-3 mt-4">
+                    <ListingDisplay listData={this.state.restaurantList}/>
+                </div>
             </div>
+            <Footer/>
             </>
         )
     }
