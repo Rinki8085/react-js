@@ -1,7 +1,5 @@
 import React,{Component} from "react";
 import {withRouter} from 'react-router-dom';
-import Header from '../Header';
-import Footer from '../Footer';
 import './placeorder.css';
 
 const url = "https://zomatoajulypi.herokuapp.com/menuItem";
@@ -36,7 +34,7 @@ class PlaceOrder extends Component{
             },
             body:JSON.stringify(this.state)
         })
-        .then(this.props.history.push('/viewOrderApi'))
+        .then(console.log("payment gateway"))
     }
 
     renderItems = (data) => {
@@ -72,7 +70,6 @@ class PlaceOrder extends Component{
     render(){
         return(
             <>
-                <Header/>
                 <div className="container" key={this.state.amount}>
                     <br/>
                     <div className="card">
@@ -85,39 +82,40 @@ class PlaceOrder extends Component{
                         </div>
                         <div style={{marginLeft:'10px',color:'maroon'}}><b><h3> Total Price : {this.state.amount}</h3></b></div>
                     </div>    
-                    <form className="form row">
-                        <div className="col-md-6">
-                            <div className="form-group">
-                                <label><b>Name</b></label>
-                                <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}/>
+                    <form method="POST" action="https://localhost:4000/paynow">
+                        <div className="form row">
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label><b>Name</b></label>
+                                    <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}/>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="form-group">
-                                <label><b>Email</b></label>
-                                <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}/>
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label><b>Email</b></label>
+                                    <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}/>
+                                </div> 
+                            </div>
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label><b>Phone</b></label>
+                                    <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label><b>Address</b></label>
+                                    <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}/>
+                                </div>
                             </div> 
-                        </div>
-                        <div className="col-md-6">
-                            <div className="form-group">
-                                <label><b>Phone</b></label>
-                                <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <button className="btn btn-success" onClick={this.handleSubmit} type="submit">Checkout</button>
+                                </div>   
                             </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="form-group">
-                                <label><b>Address</b></label>
-                                <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}/>
-                            </div>
-                        </div> 
-                        <div className="row">
-                            <div className="col-md-4">
-                                <button className="btn btn-success" onClick={this.handleSubmit}>Checkout</button>
-                            </div>   
-                        </div>   
-                    </form>       
+                        </div>     
+                    </form>    
                 </div>
-                <Footer/>
             </>
         )
     }
@@ -141,18 +139,9 @@ class PlaceOrder extends Component{
         .then((res) => res.json())
         .then((data) => 
         { 
-            /*
-            data.map((item) =>{
-                Totalprice = Totalprice+Number(item[0].menu_price)
-            })
-
-            data.map((item) => {
-                Totalprice = Totalprice+parseInt(item.menu_price)            
-            */
             var Totalprice = 0;
             data.map((item) =>{
                 Totalprice = Totalprice+Number(item.menu_price)
-                //Totalprice = Totalprice+Number(Number(menuItem).menu_price)
                 console.log("totalprice",Totalprice)
                 return 'ok'
             }) 

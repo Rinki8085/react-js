@@ -17,8 +17,12 @@ const Header = () => {
                 </div>
                 <div className="clearfix">  
                   <div className="p-3 float-right">
-                    <button type="button" className="btn btn-outline-light text-light;">Log In</button>
-                    <button type="button" className="btn btn-outline-light text-light;">Create an account</button>
+                    <Link to="/register">
+                      <button type="button" className="btn btn-outline-light text-light;">signUp</button>
+                    </Link>
+                    <Link to="/login">
+                      <button type="button" className="btn btn-outline-light text-light;">LogIn</button>
+                    </Link> 
                   </div>
                   <button onClick={changeMode}>Dark Mode</button>
                </div>

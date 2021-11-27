@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -37,7 +35,6 @@ class Details extends Component {
 
         return(
             <>
-                <Header/>
                 <div className="container" key={this.state.restaurant_id}>
                     <div className="card" style={{width:'80%', marginLeft:'8%',backgroundColor:'wheat'}}>
                         <div>
@@ -75,7 +72,6 @@ class Details extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </>
         )
     }
