@@ -5,8 +5,8 @@ import 'react-tabs/style/react-tabs.css';
 import MenuDisplay from './menuDisplay'
 import './details.css'
 
-const url = "https://zomatoajulypi.herokuapp.com/details";
-const menu = "https://zomatoajulypi.herokuapp.com/menu"
+const url = "https://zomoapp.herokuapp.com/details";
+const menu = "https://zomoapp.herokuapp.com/menu"
 
 class Details extends Component {
     constructor(){

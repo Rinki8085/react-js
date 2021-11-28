@@ -31,21 +31,4 @@ const Header = () => {
     )
 }
 
-/*
-const shoot = () => {
-    alert("Great Shot!");
-  }
-
-  return (
-    <button onClick={shoot}>Take the shot!</button>
-  );
-}
-
- function changeMode(){
-      var mybody = document.body;
-      // if body have class mybody it will remove the class else add
-      mybody.classList.toggle('myDark');
-  }
-*/
-
 export default Header;

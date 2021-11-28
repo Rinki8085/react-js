@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import {withRouter} from 'react-router-dom';
 import './placeorder.css';
 
-const url = "https://zomatoajulypi.herokuapp.com/menuItem";
+const url = "https://zomoapp.herokuapp.com/menuItem";
 const PostUrl = "https://zomoapp.herokuapp.com/placeOrder";
 
 class PlaceOrder extends Component{
