@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import './Search.css';
 
 const locationurl = "https://zomoapp.herokuapp.com/location";
@@ -56,7 +56,7 @@ class Search extends Component {
         return(
             <>
             <div className="container-fluid maincontainer">      
-                
+            
                 <div className="p-1 d-flex justify-content-center">
                     <span className="mb-3 d-flex justify-content-center logo">e!</span>
                 </div>
@@ -81,6 +81,7 @@ class Search extends Component {
                 </div>
                 
             </div>
+            <Link to="/viewOrderApi">Orders</Link>
             </>
         )
     }

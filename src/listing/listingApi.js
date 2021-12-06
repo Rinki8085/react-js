@@ -23,18 +23,16 @@ class Listing extends Component {
     render(){
         return(
             <>
-            <div className="row mainContainer">
-                <div className="col-sm-3 ml-2 mt-4 filter">
-                
-                    <h3>Filters</h3>
+                <div className="row mainContainer">
+                    <div className="col-sm-3 ml-2 mt-4 filter">
+                        <h3>Filters</h3>
                         <CuisineFilter restPerCuisine={(data) => {this.setDataAsPerFilter(data)}}/> 
-                        <CostFilter restPerCost={(data) => {this.setDataAsPerFilter(data)}}/> 
-                    
+                        <CostFilter restPerCost={(data) => {this.setDataAsPerFilter(data)}}/>     
+                    </div>
+                    <div className="col-lg-6 col-md-4 cl-sm-3 mt-4">
+                        <ListingDisplay listData={this.state.restaurantList}/>
+                    </div>
                 </div>
-                <div className="col-lg-6 col-md-4 cl-sm-3 mt-4">
-                    <ListingDisplay listData={this.state.restaurantList}/>
-                </div>
-            </div>
             </>
         )
     }

@@ -48,7 +48,6 @@ class Details extends Component {
                                         <Tab>Menu</Tab>
                                         <Tab>Contact</Tab>
                                     </TabList>
-                                    
                                     <TabPanel>
                                     <h4><b>About This Place</b></h4>
                                         <p><b>Average rating</b> - {details.average_rating}</p>

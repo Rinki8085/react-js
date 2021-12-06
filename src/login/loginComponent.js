@@ -1,16 +1,15 @@
 import React,{Component} from "react";
 import {withRouter} from 'react-router-dom';
 
-const url = "https://zomatoajulypi.herokuapp.com/menuItem";
-const PostUrl = "https://zomoapp.herokuapp.com/placeOrder";
-
+const url = "https://user-login-api.herokuapp.com/api/auth/login";
 class Login extends Component{
     constructor(props){
         super(props)
 
         this.state={
             email:'',
-            password:''
+            password:'',
+            message:''
         }
     }
 
@@ -19,7 +18,7 @@ class Login extends Component{
     }
 
     handleSubmit = () => {
-        fetch(PostUrl,{
+        fetch(url,{
             method:'POST',
             headers:{
                 'accept':'application/json',
@@ -27,7 +26,15 @@ class Login extends Component{
             },
             body:JSON.stringify(this.state)
         })
-        .then(console.log("payment gateway"))
+        .then((res) => res.json())
+        .then((data) => {
+            if(data.auth === false) {
+                this.setState({message:data.token})
+            }else{
+                sessionStorage.setItem('ltk',data.token)
+                this.props.history.push('/')
+            }
+        })
     }
 
     render(){
@@ -36,10 +43,10 @@ class Login extends Component{
                 <div className="container" key={this.state.amount}> 
                     <div className="card"> 
                         <div className="card-heading">
-                            <h3>Login</h3>
+                            <h3>Login !</h3>
                         </div>
                         <div className="card-body">
-                            <form method="POST" action="https://localhost:4000/paynow">
+                                <h4 style={{color:'red'}}>{this.state.message}</h4>
                                 <div className=" row">
                                     <div className="col-md-6">
                                         <div className="form-group">
@@ -56,10 +63,9 @@ class Login extends Component{
                                 </div>     
                                 <div className="row">
                                     <div className="col-md-4">
-                                        <button className="btn btn-success" onClick={this.handleSubmit} type="submit">Checkout</button>
+                                        <button className="btn btn-success" onClick={this.handleSubmit} type="submit">Login</button>
                                     </div>   
                                 </div>
-                            </form>
                         </div>
                     </div>    
                 </div>

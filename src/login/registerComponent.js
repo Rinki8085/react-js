@@ -1,8 +1,7 @@
 import React,{Component} from "react";
 import {withRouter} from 'react-router-dom';
 
-const url = "https://zomatoajulypi.herokuapp.com/menuItem";
-const PostUrl = "https://zomoapp.herokuapp.com/placeOrder";
+const Url = "https://user-login-api.herokuapp.com/api/auth/register";
 
 class Register extends Component{
     constructor(props){
@@ -10,7 +9,7 @@ class Register extends Component{
 
         this.state={
             name:'',
-            phone:0,
+            phone:'',
             email:'',
             password:''
         }
@@ -21,7 +20,7 @@ class Register extends Component{
     }
 
     handleSubmit = () => {
-        fetch(PostUrl,{
+        fetch(Url,{
             method:'POST',
             headers:{
                 'accept':'application/json',
@@ -41,7 +40,6 @@ class Register extends Component{
                             <h3>Register Yourself</h3>
                         </div>
                         <div className="card-body">
-                            <form method="POST" action="https://localhost:4000/paynow">
                                 <div className="form row">
                                     <div className="col-md-6">
                                         <div className="form-group">
@@ -71,10 +69,9 @@ class Register extends Component{
                                 </div>     
                                 <div className="row">
                                     <div className="col-md-4">
-                                        <button className="btn btn-success" onClick={this.handleSubmit} type="submit">Checkout</button>
+                                        <button className="btn btn-success" onClick={this.handleSubmit} type="submit">Register</button>
                                     </div>   
                                 </div>
-                            </form>
                         </div>
                     </div>    
                 </div>

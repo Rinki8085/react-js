@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 
-const url = "https://zomatoajulypi.herokuapp.com/filter"
+const url = "https://zomoapp.herokuapp.com/filter"
 
 class CuisineFilter extends Component{
 

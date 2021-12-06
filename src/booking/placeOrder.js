@@ -1,5 +1,4 @@
 import React,{Component} from "react";
-import {withRouter} from 'react-router-dom';
 import './placeorder.css';
 
 const url = "https://zomoapp.herokuapp.com/menuItem";
@@ -10,13 +9,14 @@ class PlaceOrder extends Component{
         super(props)
 
         this.state={
+            id:Math.floor(Math.random()*10000),
             details:'',
             hotel_name:this.props.match.params.restName,
-            amount:0,
-            name:'',
-            phone:0,
+            amount:'',
+            name:sessionStorage.getItem('userData')?sessionStorage.getItem('userData').split(',')[0]:'',
+            phone:sessionStorage.getItem('userData')?sessionStorage.getItem('userData').split(',')[2]:'',
             address:'',
-            email:'',
+            email:sessionStorage.getItem('userData')?sessionStorage.getItem('userData').split(',')[1]:'',
             status:'pending'
         }
     }
@@ -24,16 +24,18 @@ class PlaceOrder extends Component{
     handleChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
     }
-
+    
     handleSubmit = () => {
-        fetch(PostUrl,{
-            method:'POST',
-            headers:{
-                'accept':'application/json',
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(this.state)
-        })
+        fetch(PostUrl,
+            {
+                method:'POST',
+                headers:{
+                    'accept':'application/json',
+                    'content-type':'application/json'
+                },
+                body:JSON.stringify(this.state)
+            }
+        )
         .then(console.log("payment gateway"))
     }
 
@@ -42,16 +44,16 @@ class PlaceOrder extends Component{
            return data.map((item) => {
                 return(
                     <>
-                    <div className="menu card" >
-                        <div className="card-image" key={this.menu_id}>
-                            <img src={item.menu_image} alt="menuImage"/>
+                        <div className="menu card" >
+                            <div className="card-image" key={this.menu_id}>
+                                <img src={item.menu_image} alt="menuImage"/>
+                            </div>
+                            <div className="card-body">
+                                <h4>{item.menu_name}</h4>
+                                <p><span className="badge badge-success">{item.menu_type}</span></p>
+                                <p>Rs. {item.menu_price}</p>
+                            </div>
                         </div>
-                        <div className="card-body">
-                            <h4>{item.menu_name}</h4>
-                            <p><span className="badge badge-success">{item.menu_type}</span></p>
-                            <p>Rs. {item.menu_price}</p>
-                        </div>
-                    </div>
                     </>
                 )
             })
@@ -68,6 +70,13 @@ class PlaceOrder extends Component{
     }   
 
     render(){
+        if(!sessionStorage.getItem('userData')){
+            return(
+                <div>
+                    <h1>Login first to place booking</h1>
+                </div>
+            )
+        }
         return(
             <>
                 <div className="container" key={this.state.amount}>
@@ -82,7 +91,7 @@ class PlaceOrder extends Component{
                         </div>
                         <div style={{marginLeft:'10px',color:'maroon'}}><b><h3> Total Price : {this.state.amount}</h3></b></div>
                     </div>    
-                    <form method="POST" action="https://localhost:4000/paynow">
+                    <form method="POST"  action="http://localhost:4000/paynow">
                         <div className="form row">
                             <div className="col-md-6">
                                 <div className="form-group">
@@ -108,6 +117,8 @@ class PlaceOrder extends Component{
                                     <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}/>
                                 </div>
                             </div> 
+                            <input type="hidden" name="amount" value={this.state.amount}/>
+                            <input type="hidden" name="id" value={this.state.id}/>
                             <div className="row">
                                 <div className="col-md-4">
                                     <button className="btn btn-success" onClick={this.handleSubmit} type="submit">Checkout</button>
@@ -121,8 +132,7 @@ class PlaceOrder extends Component{
     }
 
     componentDidMount(){
-        var menuItem = sessionStorage.getItem('menu');
-        console.log("menuItem",menuItem)
+        var menuItem =  sessionStorage.getItem('menu');
         var orderId = []
         menuItem.split(',').map((item) => {
             orderId.push(parseInt(item))
@@ -131,23 +141,22 @@ class PlaceOrder extends Component{
         fetch(url,{
             method:'POST',
             headers:{
-                'Accept':'application/json',
-                'Content-Type':'application/json'
+                'accept':'application/json',
+                'content-Type':'application/json'
             },
             body:JSON.stringify(orderId)
         })
         .then((res) => res.json())
         .then((data) => 
-        { 
+        {
             var Totalprice = 0;
-            data.map((item) =>{
-                Totalprice = Totalprice+Number(item.menu_price)
-                console.log("totalprice",Totalprice)
+            data.map((item) => {
+                Totalprice = Totalprice+parseInt(item.menu_price)
                 return 'ok'
-            }) 
+            })
             this.setState({details:data,amount:Totalprice})
         })
     }
 }
 
-export default withRouter(PlaceOrder);
+export default PlaceOrder;
