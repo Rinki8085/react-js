@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Link} from 'react-router-dom';
 import Header from '../Header';
 import './placeorder.css';
 
@@ -75,6 +76,7 @@ class PlaceOrder extends Component{
             return(
                 <div>
                     <h1>Login first to place booking</h1>
+                    <Link to='/login'><button className="btn btn-danger">Login</button></Link>
                 </div>
             )
         }
@@ -92,9 +94,8 @@ class PlaceOrder extends Component{
                             {this.renderItems(this.state.details)}
                         </div>
                         <div style={{marginLeft:'10px',color:'maroon'}}><b><h3> Total Price : {this.state.amount}</h3></b></div>
-                        <h2>please! click this.</h2><button onClick={this.handleSubmit}>Submit</button>
                     </div>    
-                   
+                    <h4> please! click this.(after filling the address)</h4><button onClick={this.handleSubmit}>Submit</button>
                     <form method="POST"  action="http://localhost:4000/paynow">
                         <div className="form row">
                             <div className="col-md-6">
