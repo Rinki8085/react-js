@@ -44,4 +44,5 @@ const QuickSearch = (props) => {
     )
 }
 
+
 export default QuickSearch;

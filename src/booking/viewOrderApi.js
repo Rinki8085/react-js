@@ -14,7 +14,6 @@ class ViewOrderApi extends Component {
         }
     }
 
-    
     render(){
         
         if(!sessionStorage.getItem('userData')){
@@ -35,8 +34,7 @@ class ViewOrderApi extends Component {
     componentDidMount(){
         if(this.props.location){
             var qparams = this.props.location.search;
-            var emails = sessionStorage.getItem('userData').split(',')[1]
-            console.log(emails)
+            console.log(qparams)
             if(qparams){
                 var data = {
                     "status":"Delivered",
@@ -56,7 +54,7 @@ class ViewOrderApi extends Component {
                     })
             }
         }
-        axios.get(`${url}?email=${emails}`)
+        axios.get(`${url}?email=${sessionStorage.getItem('userData').split(',')[1]}`)
         .then((res) => {this.setState({orders:res.data})})
     }
 }

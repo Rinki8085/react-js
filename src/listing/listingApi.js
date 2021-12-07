@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import ListingDisplay from './listingDisplay';
-import CuisineFilter from '../Filters/cuisineFilter'
+import CuisineFilter from '../Filters/cuisineFilter';
+import Header from '../Header';
 import CostFilter from '../Filters/costFilter';
 import './listing.css';
 
@@ -23,6 +24,7 @@ class Listing extends Component {
     render(){
         return(
             <>
+                <Header/>
                 <div className="row mainContainer">
                     <div className="col-sm-3 ml-2 mt-4 filter">
                         <h3>Filters</h3>

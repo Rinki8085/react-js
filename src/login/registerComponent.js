@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import {withRouter} from 'react-router-dom';
+import './user.css';
 
 const Url = "https://user-login-api.herokuapp.com/api/auth/register";
 
@@ -34,11 +35,10 @@ class Register extends Component{
     render(){
         return(
             <>
-                <div className="container" key={this.state.amount}> 
-                    <div className="card"> 
-                        <div className="card-heading">
-                            <h3>Register Yourself</h3>
-                        </div>
+                <center><b><h2 style={{fontWeight:'bold', marginTop:'5px'}}>Register Yourself</h2></b></center>
+                <center>
+                <div className="login" key={this.state.amount}> 
+                    <div className="login"> 
                         <div className="card-body">
                                 <div className="form row">
                                     <div className="col-md-6">
@@ -75,6 +75,7 @@ class Register extends Component{
                         </div>
                     </div>    
                 </div>
+                </center>
             </>
         )
     }

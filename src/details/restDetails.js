@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import MenuDisplay from './menuDisplay'
-import './details.css'
+import MenuDisplay from './menuDisplay';
+import Header from '../Header';
+import './details.css';
 
 const url = "https://zomoapp.herokuapp.com/details";
 const menu = "https://zomoapp.herokuapp.com/menu"
@@ -35,6 +36,7 @@ class Details extends Component {
 
         return(
             <>
+                <Header/>
                 <div className="container" key={this.state.restaurant_id}>
                     <div className="card" style={{width:'80%', marginLeft:'8%',backgroundColor:'wheat'}}>
                         <div>

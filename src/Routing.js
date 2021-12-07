@@ -7,12 +7,10 @@ import PlaceOrder from './booking/placeOrder';
 import ViewOrderApi from './booking/viewOrderApi';
 import Register from './login/registerComponent';
 import Login from './login/loginComponent';
-import Header from './Header';
 
 const Routing = () => {
     return(
-        <BrowserRouter forceRefresh={true}>
-            <Header/>
+        <BrowserRouter>
             <Route exact path="/" component={Home}/>
             <Route path="/list/:mealId" component={Listing}/>
             <Route path="/details/:restId" component={RestDetails}/>

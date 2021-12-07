@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import Header from '../Header';
 import './placeorder.css';
 
 const url = "https://zomoapp.herokuapp.com/menuItem";
@@ -79,6 +80,7 @@ class PlaceOrder extends Component{
         }
         return(
             <>
+                <Header/>
                 <div className="container" key={this.state.amount}>
                     <br/>
                     <div className="card">
@@ -90,7 +92,9 @@ class PlaceOrder extends Component{
                             {this.renderItems(this.state.details)}
                         </div>
                         <div style={{marginLeft:'10px',color:'maroon'}}><b><h3> Total Price : {this.state.amount}</h3></b></div>
+                        <h2>please! click this.</h2><button onClick={this.handleSubmit}>Submit</button>
                     </div>    
+                   
                     <form method="POST"  action="http://localhost:4000/paynow">
                         <div className="form row">
                             <div className="col-md-6">
@@ -117,11 +121,12 @@ class PlaceOrder extends Component{
                                     <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}/>
                                 </div>
                             </div> 
+                            
                             <input type="hidden" name="amount" value={this.state.amount}/>
                             <input type="hidden" name="id" value={this.state.id}/>
                             <div className="row">
                                 <div className="col-md-4">
-                                    <button className="btn btn-success" onClick={this.handleSubmit} type="submit">Checkout</button>
+                                    <button className="btn btn-success" type="submit">Checkout</button>
                                 </div>   
                             </div>
                         </div>     
