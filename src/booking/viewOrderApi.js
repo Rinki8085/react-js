@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import ViewOrder from './viewOrder';
+import Header from '../Header';
 import axios from 'axios';
 
 const url = "https://zomoapp.herokuapp.com/viewOrder";
@@ -19,14 +20,19 @@ class ViewOrderApi extends Component {
         if(!sessionStorage.getItem('userData')){
             return(
                 <div>
+                    <Header/>
                     <h1>Login first to see booking</h1>
                 </div>
             )
         }
         return(
+            <>
+            <Header/>
             <div className="container">
                 <ViewOrder orderData={this.state.orders}/>
             </div>
+            <h1 style={{color:'green',fontWeight:'bold',textAlign:'center'}}>!* Successfully Ordered *!</h1>
+            </>
         )
     }
 
