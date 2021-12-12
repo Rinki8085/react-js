@@ -82,8 +82,6 @@ class Details extends Component {
         let restId = this.props.match.params.restId;
         let response = await axios.get(`${url}/${restId}`);
         let menudata = await axios.get(`${menu}/${restId}`);
-        console.log(response.data)
-        console.log(menudata.data)
         this.setState({details:response.data[0],menuList:menudata.data})
     }
 

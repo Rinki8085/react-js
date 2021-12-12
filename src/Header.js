@@ -17,7 +17,6 @@ handleLogout = () => {
     sessionStorage.removeItem('ltk');
     sessionStorage.removeItem('userData');
     this.props.history.push('/')
-
 }
 
 conditionalHeader = () => {

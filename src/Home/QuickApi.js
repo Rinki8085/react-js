@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import QuickSearch from './QuickSearch';
-
 import './QuickSearch.css'
 
 const url = "https://zomoapp.herokuapp.com/quicksearch"
